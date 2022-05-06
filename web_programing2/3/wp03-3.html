@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>変数の有効範囲</title>
+</head>
+<body>
+  <script>
+    function chkScope(x) {
+      let i=100;
+      return (x*i);
+    }
+    let in1=Math.random();
+    let out1=chkScope(in1);
+    console.log("入力："+in1+" 結果："+out1);
+  </script>
+</body>
+</html>

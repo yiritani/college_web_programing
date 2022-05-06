@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>演習3-1：ボタンクリックで実行される関数 M21W0B09</title>
+</head>
+<body>
+<h1>引数により処理が変わる関数</h1>
+<button onclick="calc('+')">足し算（＋）</button><br>
+<button onclick="calc('-')">引き算（ー）</button><br>
+<button onclick="calc('/')">割り算の商（➗）</button><br>
+<button onclick="calc('%')">割り算の余り</button><br>
+<p>結果はコンソールで確認</p>
+  <script>
+	  function calc(method) {
+          let answer = 0;
+          let number1 = Number(window.prompt("一つ目の数値を入力してください"));
+          let number2 = Number(window.prompt("二つ目の数値を入力してください"));
+          if (method === "+") {
+              answer = number1 + number2;
+          } else if (method === "-") {
+              answer = number1 - number2;
+          } else if (method === "/") {
+              answer = number1 / number2;
+          } else if (method === "%") {
+              answer = number1 % number2;
+          }
+          console.log(number1 + method + number2 + "=" + answer);
+      }
+  </script>
+</body>
+</html>

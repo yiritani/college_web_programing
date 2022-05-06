@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>演習3-2：数当てゲーム M21W0B09</title>
+</head>
+<body>
+<h1>数当てゲーム</h1>
+<button onclick="predict()">数当てゲームスタート</button><br>
+<p>結果はコンソールで確認</p>
+  <script>
+	  const targetNumber = Math.floor(Math.random()*100) + 1
+	  let tryNum = 0;
+	  function predict() {
+          let predictNumber = Number(window.prompt("予想値を入力してください"));
+          tryNum++;
+          if (0 < predictNumber - targetNumber && predictNumber - targetNumber <= 3) {
+              console.log("おしい、それより小さいです")
+          } else if (0 < targetNumber - predictNumber && targetNumber - predictNumber <= 3){
+	          console.log("おしい、それより大きいです")
+          } else if (targetNumber < predictNumber) {
+              console.log("それより小さいです")
+          } else if (predictNumber < targetNumber) {
+              console.log("それより大きいです")
+          } else if (predictNumber === targetNumber) {
+              console.log("正解です")
+          }
+      }
+  </script>
+</body>
+</html>
