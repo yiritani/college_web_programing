@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>M21W0B09 WP2-02</title>
+</head>
+<body>
+<script>
+    let randomNum = Math.floor(Math.random()*6) + 1;
+    let inputNum = Number(window.prompt('数値を入力してください'));
+    if (1 <= inputNum && inputNum <= 6) {
+        if (randomNum === inputNum) {
+            window.alert('あたり\nサイコロの値：' + randomNum + '\n予想値：' + inputNum);
+        } else if (inputNum < randomNum) {
+            window.alert('はずれ\nそれより大きな値です\nサイコロの値：' + randomNum + '\n予想値：' + inputNum);
+        } else if (randomNum < inputNum) {
+            window.alert('はずれ\nそれより小さな値です\nサイコロの値：' + randomNum + '\n予想値：' + inputNum);
+        }
+    } else {
+       window.alert('不正な入力値です')
+    }
+
+</script>
+
+</body>
+</html>

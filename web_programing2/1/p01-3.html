@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>p01-3</title>
+</head>
+<body>
+<script>
+    let totalPrice = Number(window.prompt('支払い金額'));
+    let oneHundred = Math.floor(totalPrice / 100);
+    totalPrice = totalPrice % 100
+    let fifty = Math.floor(totalPrice / 50);
+    totalPrice = totalPrice % 50
+    let ten = Math.floor(totalPrice / 10);
+    totalPrice = totalPrice % 10
+    let five = Math.floor(totalPrice / 5);
+    let one = totalPrice % 5
+    window.alert('100円:'+oneHundred + '枚, 50円:' + fifty + '枚, 10円:' + ten + '枚, 5円: ' + five + '枚, 1円:' + one + '枚')
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let randomNum = Math.floor(Math.random()*6) + 1;
+    let inputNum = Number(window.prompt('数値を入力してください'));
+    if (0 < inputNum && inputNum < 7) {
+        let result = '';
+        switch (randomNum){
+            case inputNum:
+                window.alert('あたり');
+            case
+        }
+        if (randomNum === inputNum) {
+            window.alert('あたり');
+        } else if (inputNum < randomNum) {
+            window.alert('はずれ\nそれより大きな値です\nサイコロの値：' + randomNum + '\n予想値：' + inputNum);
+        } else if (randomNum < inputNum) {
+            window.alert('はずれ\nそれより小さな値です\nサイコロの値：' + randomNum + '\n予想値：' + inputNum);
+        }
+    } else {
+       window.alert('不正な入力値です')
+    }
+
+</script>
+
+</body>
+</html>

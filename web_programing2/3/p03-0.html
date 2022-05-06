@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>M21W0B09 p03-0</title>
+</head>
+<body>
+<script>
+    function calcCylinderVolume(radius, height) {
+        return (Math.PI * radius ** 2) * height
+    }
+    let inputRadius = Number(window.prompt('半径を入力'))
+    let inputHeight = Number(window.prompt('高さを入力'))
+    window.alert('円柱の面積=' + calcCylinderVolume(inputRadius, inputHeight))
+</script>
+</body>
+</html>
