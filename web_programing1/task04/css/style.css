@@ -1,0 +1,14 @@
+@charset "UTF-8";
+h1 {
+    color: indianred;
+}
+img {
+    width: 500px;
+    height: 300px;
+    padding: 10px;
+}
+
+.span {
+    float: left;
+    clear: right;
+}
