@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>p04-2.html M21W0B09 入谷雄介</title>
+</head>
+<body>
+<button onclick="addProperty()">プロパティ追加</button>
+<button onclick="removeProperty()">プロパティ削除</button>
+
+<script>
+	let targetProperty = {};
+	function addProperty() {
+       let keyName = window.prompt("キー名を入力してください");
+       let inputValue = window.prompt("値を入力してください");
+       targetProperty[keyName] = inputValue;
+       console.log(targetProperty);
+	}
+
+    function removeProperty() {
+        let keyName = window.prompt("キー名を入力してください");
+        if (keyName in targetProperty) {
+            delete targetProperty[keyName];
+			console.log(targetProperty);
+        } else {
+            alert("キー名が存在しません")
+        }
+    }
+</script>
+</body>
+</html>

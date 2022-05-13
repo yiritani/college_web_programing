@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>p04-1 M21W0B09 入谷雄介</title>
+</head>
+<body>
+<button onclick="showPersonalInfo('name')">名前</button>
+<button onclick="showPersonalInfo('hobby')">趣味</button>
+<button onclick="showPersonalInfo('from')">出身地</button>
+<button onclick="showPersonalInfo('book')">愛読書</button>
+
+<script>
+	const personalInfo = {
+        name: '入谷雄介',
+        hobby: 'ギター',
+        from: '北海道',
+        book: '運と付き合う',
+	};
+	function showPersonalInfo(info) {
+       console.log(personalInfo[info]);
+	}
+</script>
+</body>
+</html>
