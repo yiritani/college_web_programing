@@ -1,0 +1,30 @@
+@charset "UTF-8";
+h1 {
+    color: indianred;
+}
+img {
+    width: 500px;
+    height: 300px;
+    padding: 10px;
+}
+
+span {
+    float: left;
+    clear: right;
+}
+
+ul {
+  background: #fffcf4;
+  border-radius :8px;/*角の丸み*/
+  box-shadow :0px 0px 5px silver;/*5px=影の広がり具合*/
+  padding: 0.5em 0.5em 0.5em 2em;
+}
+ul li{
+  line-height: 1.5;
+  padding: 0.5em 0;
+}
+
+
+.second {
+    margin-left: 2em;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>p05-2 M21W0B09 入谷雄介</title>
+</head>
+<body>
+<h2>基礎代謝量計算</h2>
+<p>身長<input type="text" id="height" placeholder="身長を入力(cm)">cm</p>
+<p>体重<input type="text" id="weight" placeholder="体重を入力(kg)">kg</p>
+<p>年齢<input type="text" id="age" placeholder="年齢を入力(歳)">歳</p>
+<input type="radio" name="sex" value="0" checked>男性
+<input type="radio" name="sex" value="1">女性
+<br>
+<button onclick="calcMetabolism()" style="margin: 10px">男性の基礎代謝量計算</button>
+
+<p>↓ここに答えが表示されます</p>
+<p id="answer"></p>
+<script>
+    function calcMetabolism() {
+        let inputHeight= document.querySelector('#height').value;
+        if(isNaN(inputHeight)) {
+            alert('身長は半角数値で入力してください');
+        }
+        let inputWeight = document.querySelector('#weight').value;
+        if(isNaN(inputWeight)) {
+            alert('体重は半角数値で入力してください');
+        }
+        let inputAge = document.querySelector('#age').value;
+        if(isNaN(inputAge)) {
+            alert('年齢は半角数値で入力してください');
+        }
+        let inputSex = document.querySelector('[name="sex"]:checked').value;
+        if (inputHeight === '' || inputHeight === '' || inputAge === '' || inputSex === '') {
+            alert('各項目は入力必須です')
+            return
+        }
+
+        let baseCoefficient;
+        let heightCoefficient;
+        let weightCoefficient;
+        let ageCoefficient;
+
+        if (inputSex === '0') {
+            baseCoefficient = 66.47;
+            heightCoefficient = 5.0;
+            weightCoefficient = 13.75;
+            ageCoefficient = 6.75;
+        } else if (inputSex === '1') {
+            baseCoefficient = 655.1;
+            heightCoefficient = 1.85;
+            weightCoefficient = 9.56;
+            ageCoefficient = 4.68;
+        }
+
+        const result = (baseCoefficient + (weightCoefficient * inputWeight) + (heightCoefficient * inputHeight) - (ageCoefficient * inputAge)).toFixed(2);
+        document.querySelector("#answer").textContent = result + ' kcal';
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>p05-1 M21W0B09 入谷雄介</title>
+</head>
+<body>
+<label for="radius" style="margin: 10px">
+    <input type="text" id="radius" placeholder="半径を入力(cm)">
+</label>
+<br>
+<label for="height" style="margin: 10px">
+    <input type="text" id="height" placeholder="高さを入力(cm)">
+</label>
+<br>
+<button onclick="calcCylinderVolume()" style="margin: 10px">計算する</button>
+
+<p>↓ここに答えが表示されます</p>
+<p id="answer"></p>
+<script>
+    function calcCylinderVolume() {
+        let inputRadius = document.querySelector('#radius').value;
+        if(isNaN(inputRadius)) {
+            alert('半径は半角数値で入力してください');
+        }
+        let inputHeight = document.querySelector('#height').value;
+        if(isNaN(inputHeight)) {
+            alert('高さは半角数値で入力してください');
+        }
+        if (inputRadius === '' || inputHeight === '') {
+            alert('各項目は入力必須です')
+            return
+        }
+        document.querySelector("#answer").textContent = ((Math.PI * inputRadius ** 2) * inputHeight).toFixed(2) + ' cm';
+    }
+</script>
+</body>
+</html>
