@@ -27,6 +27,10 @@
         alert('お支払い金額は半角数値で入力してください');
         return
     }
+    if(totalPrice === "") {
+        alert('お支払い金額を入力してください')
+	    return
+    }
     let oneHundred = Math.floor(totalPrice / 100);
     totalPrice = totalPrice % 100
     let fifty = Math.floor(totalPrice / 50);
