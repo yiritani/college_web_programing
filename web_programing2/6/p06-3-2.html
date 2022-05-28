@@ -7,7 +7,7 @@
 <body>
   <p>数当てゲーム</p>
   <label for="predictNumber">
-    <input type="number" id="predictNumber">
+    <input type="number" id="predictNumber" value="0">
   </label>
   <button onclick="predict()">数当てゲームスタート</button><br>
   <p>結果表示エリア</p>
@@ -19,6 +19,19 @@
 	  let tryNum = 1;
 	  function predict() {
           let predictNumber = Number(document.querySelector('#predictNumber').value);
+          if(isNaN(predictNumber)) {
+            alert('半角数値で入力してください');
+            return
+          }
+          if (100 <= predictNumber) {
+              alert("100以下の値を入力してください")
+              return
+          }
+          if (predictNumber <= 0) {
+              alert("1以上の値を入力してください")
+              return
+          }
+
           let text = '';
           if (0 < predictNumber - targetNumber && predictNumber - targetNumber <= 3) {
               text = tryNum + "回目：おしい、" + predictNumber + "より小さいです"
