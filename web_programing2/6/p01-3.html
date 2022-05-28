@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>p01-3</title>
+</head>
+<body>
+<p>お支払い金額</p>
+<label for="totalPrice">
+  <input type="text" id="totalPrice">
+</label>
+<button onclick="calcCoinNum()" style="margin: 10px">硬貨枚数を計算する</button>
+
+<div id="answerArea">
+  <p style="font-size: 20px">下記に計算結果を表示</p>
+  <p>支払い金額:<span id="ansTotalPrice"></span>枚</p>
+  <p>100円玉:<span id="ansHundred"></span>枚</p>
+  <p>50円玉:<span id="ansFifty"></span>枚</p>
+  <p>10円玉:<span id="ansTen"></span>枚</p>
+  <p>5円玉:<span id="ansFive"></span>枚</p>
+  <p>1円玉:<span id="ansOne"></span>枚</p>
+</div>
+<script>
+  function calcCoinNum() {
+    let totalPrice = document.querySelector('#totalPrice').value;
+    if(isNaN(totalPrice)) {
+        alert('お支払い金額は半角数値で入力してください');
+        return
+    }
+    let oneHundred = Math.floor(totalPrice / 100);
+    totalPrice = totalPrice % 100
+    let fifty = Math.floor(totalPrice / 50);
+    totalPrice = totalPrice % 50
+    let ten = Math.floor(totalPrice / 10);
+    totalPrice = totalPrice % 10
+    let five = Math.floor(totalPrice / 5);
+    let one = totalPrice % 5
+    document.querySelector("#ansHundred").textContent = oneHundred;
+    document.querySelector("#ansFifty").textContent = fifty;
+    document.querySelector("#ansTen").textContent = ten;
+    document.querySelector("#ansFive").textContent = five;
+    document.querySelector("#ansOne").textContent = one;
+
+  }
+</script>
+</body>
+</html>
