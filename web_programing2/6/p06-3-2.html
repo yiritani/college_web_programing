@@ -5,32 +5,37 @@
   <title>演習3-2：数当てゲーム M21W0B09</title>
 </head>
 <body>
-<p>数当てゲーム</p>
-<label for="predictNumber">
-	<input type="text" id="predictNumber">
-</label>
-<button onclick="predict()">数当てゲームスタート</button><br>
-<p>結果表示エリア</p>
-<span id="tryNumber">回目:</span><span id="result"></span>
-
+  <p>数当てゲーム</p>
+  <label for="predictNumber">
+    <input type="number" id="predictNumber">
+  </label>
+  <button onclick="predict()">数当てゲームスタート</button><br>
+  <p>結果表示エリア</p>
+  <ul id="answerList">
+  </ul>
   <script>
 	  const targetNumber = Math.floor(Math.random()*100) + 1
+    const element = document.getElementById('answerList');
 	  let tryNum = 1;
 	  function predict() {
           let predictNumber = Number(document.querySelector('#predictNumber').value);
+          let text = '';
           if (0 < predictNumber - targetNumber && predictNumber - targetNumber <= 3) {
-              document.querySelector("#result").textContent = "おしい、それより小さいです";
+              text = tryNum + "回目：おしい、" + predictNumber + "より小さいです"
           } else if (0 < targetNumber - predictNumber && targetNumber - predictNumber <= 3){
-              document.querySelector("#result").textContent = "おしい、それより大きいです";
+              text = tryNum + "回目：おしい、" + predictNumber + "より大きいです"
           } else if (targetNumber < predictNumber) {
-              document.querySelector("#result").textContent = "それより小さいです";
+              text = tryNum + "回目：" + predictNumber + "より小さいです"
           } else if (predictNumber < targetNumber) {
-              document.querySelector("#result").textContent = "それより大きいです";
+              text = tryNum + "回目：" + predictNumber + "より大きいです"
           } else if (predictNumber === targetNumber) {
-              document.querySelector("#result").textContent = "正解です";
+              text = tryNum + "回目：正解です"
           }
-          document.querySelector("#tryNumber").textContent = tryNum;
           tryNum++;
+
+          let liLast = document.createElement('li')
+          liLast.textContent = text
+          element.appendChild(liLast)
 
       }
   </script>
