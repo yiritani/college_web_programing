@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>スライダー M21W0B09</title>
+</head>
+<body>
+  <p>背景と文字色を変える</p>
+  <div>
+    <h4>背景色</h4>
+    <p>
+      <label for="backgroundRed">
+        R:<input type="range" id="backgroundRed" value="128" max="255" min="0">
+      </label>
+    </p>
+    <p>
+      <label for="backgroundGreen">
+        G:<input type="range" id="backgroundGreen" value="128" max="255" min="0">
+      </label>
+    </p>
+    <p>
+      <label for="backgroundBlue">
+        B:<input type="range" id="backgroundBlue" value="128" max="255" min="0">
+      </label>
+    </p>
+  </div>
+  <div>
+    <h4>文字色</h4>
+    <p>
+      <label for="characterRed">
+        R:<input type="range" id="characterRed" value="128" max="255" min="0">
+      </label>
+    </p>
+    <p>
+      <label for="characterGreen">
+        G:<input type="range" id="characterGreen" value="128" max="255" min="0">
+      </label>
+    </p>
+    <p>
+      <label for="characterBlue">
+        B:<input type="range" id="characterBlue" value="128" max="255" min="0">
+      </label>
+    </p>
+  </div>
+  <button onclick="changeColor()">色を変える</button><br>
+  <div id="result" style="text-align: center">
+    <span id="colorInfo">ここに色を表示</span>
+  </div>
+  <script>
+	  function changeColor() {
+          let backgroundRed = document.querySelector('#backgroundRed').value;
+          let backgroundGreen = document.querySelector('#backgroundGreen').value;
+          let backgroundBlue = document.querySelector('#backgroundBlue').value;
+          let characterRed = document.querySelector('#characterRed').value;
+          let characterGreen = document.querySelector('#characterGreen').value;
+          let characterBlue = document.querySelector('#characterBlue').value;
+          let backgroundInfo = "背景色：rgb(" + backgroundRed + ", " + backgroundGreen + "," + backgroundBlue +")";
+          let characterInfo = "文字色：rgb(" + characterRed + ", " + characterGreen + "," + characterBlue +")";
+          document.getElementById("result").style.backgroundColor = "rgb(" + backgroundRed + ", " + backgroundGreen + "," + backgroundBlue +")";
+          document.getElementById("result").style.color = "rgb(" + characterRed + ", " + characterGreen + "," + characterBlue +")";
+          document.querySelector("#colorInfo").textContent = backgroundInfo + '/' + characterInfo;
+      }
+  </script>
+</body>
+</html>
