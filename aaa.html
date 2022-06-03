@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<button onclick="call()">aaa</button>
+<script>
+	function call(){
+       let aaaa = recursive_func(5)
+		console.log(aaaa)
+	}
+	function recursive_func(n) {
+        if (n <= 1) {
+            return 1
+        } else {
+            return n + recursive_func(n - 1);
+        }
+	}
+</script>
+</body>
+</html>
