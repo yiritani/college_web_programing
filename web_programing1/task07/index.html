@@ -5,11 +5,11 @@
   <title>企業アンケート</title>
 </head>
 <body>
-	<h1>企業アンケート</h1>
-	<form action="result.php" method="post">
+	<h1>製品モニターアンケート</h1>
+	<form action="mailto:m21w0b09@m1.kcg.edu" method="post" enctype="text/plain">
 		<p>
-			<label for="company">氏名</label>
-			<input type="text" name="company" id="company">
+			<label for="name">氏名</label>
+			<input type="text" name="name" id="name">
 		</p>
 		<p>
 			<label for="age">年齢層</label>
@@ -24,11 +24,13 @@
 				<option value="70代">70代</option>
 				<option value="80代">80代</option>
 				<option value="90代">90代</option>
-				<option value="100代">100代</option>
 			</select>
 		</p>
 		<p>
-		<label for="sex">性別</label>
-
+		性別
+		<input type="radio" name="sex" value="male">男性
+		<input type="radio" name="sex" value="female">女性
+		</p>
+	</form>
 </body>
 </html>
