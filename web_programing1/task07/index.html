@@ -2,35 +2,65 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
+	<link rel="stylesheet" href="css/style.css">
   <title>企業アンケート</title>
 </head>
 <body>
-	<h1>製品モニターアンケート</h1>
+<div id="questionnaire">
+	<div class="componentBox">
+		<h1>株式会社入谷  製品アンケート</h1>
+		<div class="flex">
+			<h3>高性能マウス</h3>
+			<img src="img/mouse.jpeg" alt="高性能マウス">
+		</div>
+	</div>
 	<form action="mailto:m21w0b09@m1.kcg.edu" method="post" enctype="text/plain">
-		<p>
-			<label for="name">氏名</label>
-			<input type="text" name="name" id="name">
-		</p>
-		<p>
-			<label for="age">年齢層</label>
-			<select name="age" id="age">
-				<option value="">選択してください</option>
-				<option value="10代">10代</option>
-				<option value="20代">20代</option>
-				<option value="30代">30代</option>
-				<option value="40代">40代</option>
-				<option value="50代">50代</option>
-				<option value="60代">60代</option>
-				<option value="70代">70代</option>
-				<option value="80代">80代</option>
-				<option value="90代">90代</option>
-			</select>
-		</p>
-		<p>
-		性別
-		<input type="radio" name="sex" value="male">男性
-		<input type="radio" name="sex" value="female">女性
-		</p>
+		<div class="componentBox">
+			<p>
+				 <label for="name">氏名</label>
+				 <input type="text" name="name" id="name">
+			</p>
+		</div>
+		<div class="componentBox">
+			<p>
+				 <label for="age" class="title">年齢層</label>
+				 <select name="age" id="age">
+					 <option value="">選択してください</option>
+					 <option value="10代">10代</option>
+					 <option value="20代">20代</option>
+					 <option value="30代">30代</option>
+					 <option value="40代">40代</option>
+					 <option value="50代">50代</option>
+					 <option value="60代">60代</option>
+					 <option value="70代">70代</option>
+					 <option value="80代">80代</option>
+					 <option value="90代">90代</option>
+				 </select>
+			</p>
+		</div>
+		<div class="componentBox">
+			<p>
+				 <label class="title">性別</label>
+				 <input type="radio" name="sex" value="male">男性
+				 <input type="radio" name="sex" value="female">女性
+			</p>
+		</div>
+		<div class="componentBox">
+			<p>
+				<label type="checkbox" style="display:block">商品の良い点</label>
+  				<label><input type="checkbox" name="pros" value="design">デザイン</label>
+					<label><input type="checkbox" name="pros" value="price">値段</label>
+					<label><input type="checkbox" name="pros" value="durability">耐久性</label>
+			</p>
+		</div>
+		<div class="componentBox">
+			<p>
+				<label for="comment">ご意見・ご感想</label>
+				<textarea name="comment" id="comment" cols="65" rows="10"></textarea>
+			</p>
+		</div>
+		<input type="submit" value="送信">
 	</form>
+	</div>
 </body>
 </html>
