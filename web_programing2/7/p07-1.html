@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>おみくじ</title>
+</head>
+<body>
+<p>運勢占い</p>
+<button onclick="judge()" style="margin: 10px" id="resultButton">占う</button>
+<script>
+	const resultList = [
+         '大吉',
+         '中吉',
+         '吉',
+         '小吉',
+         '凶',
+         '大凶'
+	]
+  function judge() {
+    let randomNum = Math.floor(Math.random()*(resultList.length));
+    console.log(randomNum)
+    let judgeResult = resultList[randomNum];
+    document.querySelector("#resultButton").textContent = judgeResult;
+    if (judgeResult === "大吉") {
+        document.querySelector("#resultButton").style.backgroundColor = "blue";
+        document.querySelector("#resultButton").style.color= "white";
+    } else {
+        document.querySelector("#resultButton").style.backgroundColor = "white";
+        document.querySelector("#resultButton").style.color= "black";
+
+    }
+  }
+</script>
+</body>
+</html>

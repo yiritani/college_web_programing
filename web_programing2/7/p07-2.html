@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>円の背景色を変える</title>
+</head>
+<body>
+<p>演習7-2:円の背景色を変える</p>
+<button onclick="changeColor(0)" style="margin: 10px">lightblue</button>
+<button onclick="changeColor(1)" style="margin: 10px">pink</button>
+<button onclick="changeColor(2)" style="margin: 10px">yellow</button>
+<button onclick="changeColor(3)" style="margin: 10px">lightcoral</button>
+<div id="circle" style="width: 200px; height: 200px; background-color: white; border: solid 1px black; border-radius: 50%">
+</div>
+<script>
+	const colorList = [
+		'lightblue',
+		'pink',
+		'yellow',
+		'lightcoral'
+	]
+	function changeColor(num) {
+		document.querySelector("#circle").style.backgroundColor = colorList[num];
+		document.querySelector("#circle").style.height = 200 + (200 * num) + "px";
+		document.querySelector("#circle").style.width = 200 + (200 * num) + "px";
+	}
+
+</script>
+</body>
+</html>
