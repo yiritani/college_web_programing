@@ -5,60 +5,30 @@
   <title>企業アンケート</title>
 </head>
 <body>
-<table>
-    <caption>2022年9月カレンダー</caption>
-    <tr>
-        <th rowspan="6" style="background-color: orange">9月</th>
-        <th class="holiday">Sun</th>
-        <th>Mon</th>
-        <th>Tue</th>
-        <th>Wed</th>
-        <th>Thu</th>
-        <th>Fri</th>
-        <th class="saturday">Sat</th>
-    </tr>
-    <tr>
-        <td colspan="4" class="nothing"></td>
-        <td>1</td>
-        <td>2</td>
-        <td class="saturday">3</td>
-    </tr>
-    <tr>
-        <td class="holiday">4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td id="birthday">9</td>
-        <td class="saturday">10</td>
-    </tr>
-    <tr>
-        <td class="holiday">11</td>
-        <td>12</td>
-        <td>13</td>
-        <td>14</td>
-        <td>15</td>
-        <td>16</td>
-        <td class="saturday">17</td>
-    </tr>
-    <tr>
-        <td class="holiday">18</td>
-        <td class="holiday">19</td>
-        <td>20</td>
-        <td>21</td>
-        <td>22</td>
-        <td class="holiday">23</td>
-        <td class="saturday">24</td>
-    </tr>
-    <tr>
-        <td class="holiday">25</td>
-        <td>26</td>
-        <td>27</td>
-        <td>28</td>
-        <td>29</td>
-        <td>30</td>
-        <td class="nothing"></td>
-    </tr>
-</table>
+	<h1>企業アンケート</h1>
+	<form action="result.php" method="post">
+		<p>
+			<label for="company">氏名</label>
+			<input type="text" name="company" id="company">
+		</p>
+		<p>
+			<label for="age">年齢層</label>
+			<select name="age" id="age">
+				<option value="">選択してください</option>
+				<option value="10代">10代</option>
+				<option value="20代">20代</option>
+				<option value="30代">30代</option>
+				<option value="40代">40代</option>
+				<option value="50代">50代</option>
+				<option value="60代">60代</option>
+				<option value="70代">70代</option>
+				<option value="80代">80代</option>
+				<option value="90代">90代</option>
+				<option value="100代">100代</option>
+			</select>
+		</p>
+		<p>
+		<label for="sex">性別</label>
+
 </body>
 </html>
