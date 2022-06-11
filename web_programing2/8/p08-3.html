@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>最小値検索</title>
+</head>
+<body>
+<h3>配列内の最小値を見つける</h3>
+<p>１から１００の乱数を１０個生成させ最小値を求めます</p>
+<button onclick="generateRandomNumArray()">乱数を発生させる</button>
+<p>現在の配列の値は：<span id="randNumArray"></span></p>
+<button onclick="searchMinNum()">最小値を求める</button>
+<p><span id="minNum"></span></p>
+<script>
+	let randNumArray = [];
+	function generateRandomNumArray(){
+	  randNumArray = [];
+		for(let i=0;i<10;i++){
+			randNumArray.push(Math.floor(Math.random()*100)+1);
+		}
+		document.querySelector("#randNumArray").innerHTML = randNumArray;
+	}
+
+  function searchMinNum(){
+			let minNum = randNumArray[0];
+			for(let i=1;i<randNumArray.length;i++){
+                  console.log(minNum);
+					if(minNum > randNumArray[i]){
+							minNum = randNumArray[i];
+					}
+			}
+			document.querySelector("#minNum").innerHTML = "最小値=" + minNum;
+	}
+</script>
+</body>
+</html>

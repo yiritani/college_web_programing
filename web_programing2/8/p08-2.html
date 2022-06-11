@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>リスト内容を逆転させる</title>
+</head>
+<body>
+<h3>リスト内容を逆転させる</h3>
+<ol>
+	<li>相内</li>
+	<li>加藤</li>
+	<li>佐藤</li>
+	<li>田中</li>
+	<li>橋本</li>
+	<li>松本</li>
+</ol>
+<button onclick="reverse()">順序を逆にする</button>
+<script>
+	function reverse(){
+    let list = document.querySelector("ol");
+		let items = list.querySelectorAll("li");
+		let len = items.length;
+		for(let i=0;i<len/2;i++){
+			let tmp = items[i].innerHTML;
+			items[i].innerHTML = items[len-1-i].innerHTML;
+			items[len-1-i].innerHTML = tmp;
+		}
+	}
+</script>
+</body>
+</html>
