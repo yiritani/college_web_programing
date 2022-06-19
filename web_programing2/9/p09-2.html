@@ -54,11 +54,13 @@
     <span id="colorInfo">ここに色を表示</span>
   </div>
   <script>
-    document.querySelectorAll('#sliders > div').forEach(function(slider) {
+    document.querySelectorAll('#sliders > div').forEach((slider) => {
       slider.addEventListener('input', (e) =>{
         document.getElementById(e.target.id + 'Value').textContent = e.target.value;
         document.getElementById('colorInfo').style.backgroundColor = `rgb(${document.getElementById('backgroundRed').value}, ${document.getElementById('backgroundGreen').value}, ${document.getElementById('backgroundBlue').value})`;
         document.getElementById('colorInfo').style.color = `rgb(${document.getElementById('characterRed').value}, ${document.getElementById('characterGreen').value}, ${document.getElementById('characterBlue').value})`;
+        document.getElementById('colorInfo').textContent = `背景色：rgb(${document.getElementById('backgroundRed').value}, ${document.getElementById('backgroundGreen').value}, ${document.getElementById('backgroundBlue').value})
+                                                            文字色：rgb(${document.getElementById('characterRed').value}, ${document.getElementById('characterGreen').value}, ${document.getElementById('characterBlue').value})`;
       });
     });
   </script>
