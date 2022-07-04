@@ -6,122 +6,130 @@
 </head>
 <body>
   <h1>演習10-2 入力値を得る</h1>
+  <div style="border: solid">
   <div class="textbox" style="display: flex">
-    <p>テキストボックス</p>
+    <p class="title">テキストボックス</p>
+    <div class="inputArea">
     <label for="textbox"></label><input type="text" id="textbox">
-    <button id="textbutton">値取得</button>
+    </div>
     <span id="textboxResult"></span>
   </div>
   <div class="textArea" style="display: flex">
-    <p>テキストエリア（複数行）</p>
-    <label for="textarea"></label><textarea id="textarea"></textarea>
-    <button id="textAreabutton">値取得</button>
+    <p class="title">テキストエリア（複数行）</p>
+    <div class="inputArea">
+      <label for="textarea"></label><textarea id="textarea"></textarea>
+    </div>
     <span id="textAreaResult"></span>
   </div>
   <div class="slider" style="display: flex">
-    <p>スライダー</p>
-    <label for="slider"></label><input type="range" id="slider">
-    <button id="sliderbutton">値取得</button>
+    <p class="title">スライダー</p>
+    <div class="inputArea">
+      <label for="slider"></label><input type="range" id="slider">
+    </div>
     <span id="sliderResult"></span>
   </div>
   <div class="checkbox" style="display: flex">
-    <p>チェックボックス</p>
+    <p class="title">チェックボックス</p>
+    <div class="inputArea">
       <label><input type="checkbox" name="checkbox" value="Windows">Windows</label>
       <label><input type="checkbox" name="checkbox" value="Mac OS">Mac OS</label>
       <label><input type="checkbox" name="checkbox" value="UNIX">UNI</label>X
-    <button id="checkboxbutton">値取得</button>
+    </div>
     <span id="checkboxresult"></span>
   </div>
   <div class="radio" style="display: flex">
-    <p>ラジオボタン</p>
-    <label><input type="radio" name="radio" value="テニス">テニス</label>
-    <label><input type="radio" name="radio" value="バスケットボール">バスケットボール</label>
-    <label><input type="radio" name="radio" value="水泳">水泳</label>
-    <button id="radiobutton">値取得</button>
+    <p class="title">ラジオボタン</p>
+    <div class="inputArea">
+      <label><input type="radio" name="radio" value="テニス">テニス</label>
+      <label><input type="radio" name="radio" value="バスケットボール">バスケットボール</label>
+      <label><input type="radio" name="radio" value="水泳">水泳</label>
+    </div>
     <span id="radioresult"></span>
   </div>
   <div class="selectbox" style="display: flex">
-    <p>メニュー（単一）</p>
+    <p class="title">メニュー（単一）</p>
     <label>
-      <select name="selectbox" id="selectBoxId">
+     <div class="inputArea">
+     <select name="selectbox" id="selectBoxId">
         <option value="札幌">札幌</option>
         <option value="仙台">仙台</option>
         <option value="大宮">大宮</option>
       </select>
+    </div>
     </label>
-    <button id="selectboxbutton">値取得</button>
     <span id="selectboxresult"></span>
   </div>
   <div class="multiSelect" style="display: flex">
-    <p>メニュー（複数）</p>
+    <p class="title">メニュー（複数）</p>
     <label>
+    <div class="inputArea">
       <select name="selectbox" id="multiSelectId" multiple>
         <option value="清水寺" name="multiselectBox">清水寺</option>
         <option value="平安神宮" name="multiselectBox">平安神宮</option>
         <option value="八坂神社" name="multiselectBox">八坂神社</option>
         <option value="伏見稲荷" name="multiselectBox">伏見稲荷</option>
       </select>
+    </div>
     </label>
-    <button id="multiSelectbutton">値取得</button>
     <span id="multiSelectresult"></span>
+  </div>
   </div>
 </body>
 <script>
-  const textButton = document.querySelector('#textbutton');
-  const textAreaButton = document.querySelector('#textAreabutton');
-  const sliderButton = document.querySelector('#sliderbutton');
-  const selectboxButton = document.querySelector('#selectboxbutton');
-  textButton.addEventListener('click', () => {
-    document.querySelector("#textboxResult").textContent = displayValue('#textbox');
+  document.querySelector("#textbox").addEventListener("input", ()=>{
+    document.querySelector("#textboxResult").innerHTML = document.querySelector("#textbox").value;
   });
-  textAreaButton.addEventListener('click', () => {
-    document.querySelector("#textAreaResult").textContent = displayValue('#textarea');
+  document.querySelector("#textarea").addEventListener("input", ()=>{
+    document.querySelector("#textAreaResult").innerHTML = document.querySelector("#textarea").value;
   });
-  sliderButton.addEventListener('click', () => {
-    document.querySelector("#sliderResult").textContent = displayValue('#slider');
+  document.querySelector("#slider").addEventListener("input", ()=>{
+    document.querySelector("#sliderResult").innerHTML = document.querySelector("#slider").value;
   });
-  selectboxButton.addEventListener('click', () => {
-    document.querySelector("#selectboxresult").textContent = displayValue('#selectBoxId');
-  });
-  function displayValue(inputId) {
-      console.log(document.querySelector(inputId));
-    return document.querySelector(inputId).value;
-  }
-
-  const checkboxButton = document.querySelector("#checkboxbutton");
-  const radioButton = document.querySelector("#radiobutton");
-  checkboxButton.addEventListener('click', () => {
-      document.querySelector("#checkboxresult").textContent = displayChoices('checkbox');
-  });
-  radioButton.addEventListener('click', () => {
-      document.querySelector("#radioresult").textContent = displayChoices('radio');
-  });
-  function displayChoices(inputName) {
-    const arr = [];
-    const selected = document.getElementsByName(inputName);
-    console.log(selected)
-    for (let i = 0; i < selected.length; i++) {
-      if (selected[i].checked) {
-        arr.push(selected[i].value);
+  let checkArr = [];
+  document.querySelectorAll("input[type='checkbox']").forEach((chk) => {
+    chk.addEventListener('change', (e) =>{
+      console.log(e.target.checked);
+      if(e.target.checked){
+        checkArr.push(e.target.value);
+      }else{
+        checkArr.splice(checkArr.indexOf(e.target.value), 1);
       }
-    }
-    return arr
-  }
-
-  const multiSelectButton = document.querySelector('#multiSelectbutton');
-  multiSelectButton.addEventListener('click', () => {
-    document.querySelector("#multiSelectresult").textContent = multiSelect('multiSelectId');
+      console.log(checkArr)
+      document.querySelector("#checkboxresult").innerHTML = checkArr;
+    });
   });
-  function multiSelect(inputName) {
-    const arr = [];
-    const selected = document.getElementById(inputName).options;
-    console.log(selected)
-    for (let i = 0; i < selected.length; i++) {
-      if (selected[i].selected) {
-        arr.push(selected[i].value);
+  document.querySelectorAll("input[type='radio']").forEach((chk) => {
+    chk.addEventListener('change', (e) =>{
+      document.querySelector("#radioresult").innerHTML = e.target.value;
+    });
+  });
+  document.querySelector("#selectBoxId").addEventListener('change', (e) =>{
+    document.querySelector("#selectboxresult").innerHTML = e.target.value;
+  });
+  let menuArr = [];
+  document.querySelector("#multiSelectId").addEventListener('change', (e) =>{
+      console.log(e.target.value)
+      if(menuArr.filter(item => item === e.target.value).length === 0){
+        menuArr.push(e.target.value);
+      }else{
+        menuArr.splice(menuArr.indexOf(e.target.value), 1);
       }
-    }
-    return arr
-  }
+      console.log(menuArr)
+    document.querySelector("#multiSelectresult").innerHTML = menuArr;
+  });
 </script>
+<style>
+  .title {
+      background-color: #f0f0f0;
+      width: 300px;
+  }
+  .inputArea {
+      width: 300px;
+      padding: 3px;
+  }
+  div {
+    border-width:1px;
+    border-style: solid;
+  }
+</style>
 </html>
