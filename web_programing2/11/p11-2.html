@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>p11-2 M21W0B09 入谷雄介</title>
+</head>
+<body>
+  <h1>見出しをクリックすると現れる/隠れる内容</h1>
+  <dl>
+    <dt>清水寺</dt>
+    <dd>清水寺の説明清水寺の説明清水寺の説明清水寺の説明清水寺の説明清水寺の説明清水寺の説明清水寺の説明清水寺の説明清水寺の説明清水寺の説明</dd>
+    <dt>伏見稲荷大社</dt>
+    <dd>伏見稲荷大社の説明伏見稲荷大社の説明伏見稲荷大社の説明伏見稲荷大社の説明伏見稲荷大社の説明伏見稲荷大社の説明伏見稲荷大社の説明</dd>
+    <dt>金閣寺</dt>
+    <dd>金閣寺の説明金閣寺の説明金閣寺の説明金閣寺の説明金閣寺の説明金閣寺の説明金閣寺の説明金閣寺の説明金閣寺の説明金閣寺の説明金閣寺の説明</dd>
+    <dt>平等院</dt>
+    <dd>平等院の説明平等院の説明平等院の説明平等院の説明平等院の説明平等院の説明平等院の説明平等院の説明平等院の説明平等院の説明平等院の説明</dd>
+  </dl>
+</body>
+
+<script>
+  document.querySelectorAll('dl').forEach(function(dl){
+    dl.addEventListener('click', function(e){
+      e.target.nextElementSibling.classList.toggle('transform1');
+      e.target.nextElementSibling.classList.toggle('animation1');
+    });
+  });
+
+</script>
+
+<style>
+  dd {
+    max-height: 0;
+    opacity: 0;
+  }
+  dl{
+    padding: 10px;
+    width: 50%;
+  }
+  dl dt{
+    margin-top: 40px;
+    border-bottom: 1px solid lightgray;
+    font-weight: bold;
+  }
+  .transform1{
+    max-height: 400px;
+    opacity: 1;
+    transition: transform 0.5s;
+  }
+</style>
+</html>
