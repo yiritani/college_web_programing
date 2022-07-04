@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>p11-1 M21W0B09 入谷雄介</title>
+</head>
+<body>
+  <h1>演習11-1 右移動＋拡大リスト１</h1>
+  <ul id="liEventListener">
+    <li>清水寺</li>
+    <li>金閣寺</li>
+    <li>銀閣寺</li>
+    <li>平安神宮</li>
+  </ul>
+  <h1>演習11-1 右移動＋拡大リスト１</h1>
+  <ul id="ulEventListener">
+    <li>清水寺</li>
+    <li>金閣寺</li>
+    <li>銀閣寺</li>
+    <li>平安神宮</li>
+  </ul>
+</body>
+
+<script>
+  let querySelector = document.querySelectorAll('#liEventListener')
+  for (let i = 0; i < querySelector.length; i++) {
+    querySelector[i].addEventListener('click', (e) => {
+      e.target.classList.toggle('transform1')
+      e.target.classList.toggle('animation1')
+    })
+  }
+
+  document.querySelectorAll('#ulEventListener').forEach((ul) => {
+    ul.addEventListener('click', (e) => {
+      e.target.classList.toggle('transform1')
+      e.target.classList.toggle('animation1')
+    })
+  })
+
+</script>
+
+<style>
+  ul{
+    list-style: none;
+    width: 150px;
+  }
+  li {
+      background-color: lightblue;
+      border: 1px solid;
+  }
+  .transform1{
+    transition: transform 0.5s;
+    transform: translateX(50px);
+  }
+  .animation1 {
+      font-size: 1.3em;
+      background-color: lightgreen;
+  }
+</style>
+</html>
