@@ -1,3 +1,8 @@
+"""
+M21W0B09 入谷雄介
+Data mining 13 class task
+"""
+
 import csv
 import glob
 import itertools
@@ -8,7 +13,7 @@ stop_word_list = [i[0] for i in csv.reader(open('stop_word.csv', 'r'))]
 vectorizer = TfidfVectorizer()
 
 
-class Util:
+class IdfUtil:
 	@staticmethod
 	def get_all_documents():
 		file_name_list = glob.glob('21Documents/*.txt')
@@ -28,7 +33,7 @@ class Util:
 		return result_text
 
 
-class WordVector(Util):
+class WordVector(IdfUtil):
 	def __init__(self):
 		self.generate_word_vector()
 
@@ -47,7 +52,7 @@ class WordVector(Util):
 			print('\n')
 
 
-class IDF(Util):
+class IDF(IdfUtil):
 	def __init__(self):
 		self.calc_idf()
 
