@@ -70,9 +70,33 @@ class IDF(IdfUtil):
 				idf_dict[word] += 1
 		for key, value in idf_dict.items():
 			idf_dict[key] = round(len(document_list) / value, 2)
+		print('=' * 30, 'Inverse Document Frequency', '=' * 30)
 		print(idf_dict)
 
 
+class FreqDamp(IdfUtil):
+	def __init__(self):
+		self.calc_freq_damp()
+
+	@classmethod
+	def calc_freq_damp(cls):
+		freq_damp_dict = {}
+		document_list = cls.get_all_documents()
+		for file_name in document_list:
+			text = cls.read_21documents(file_name)
+			text_corpus = text.split('\n')
+			X = vectorizer.fit_transform(text_corpus)
+			for word in vectorizer.get_feature_names():
+				if word not in freq_damp_dict:
+					freq_damp_dict[word] = 0
+				freq_damp_dict[word] += 1
+		for key, value in freq_damp_dict.items():
+			freq_damp_dict[key] = round(value / len(document_list), 2)
+		print('=' * 30, 'Frequency Damping', '=' * 30)
+		print(freq_damp_dict)
+
+
 if __name__ == '__main__':
-	WordVector()
-	IDF()
+	# WordVector()
+	# IDF()
+	FreqDamp()
