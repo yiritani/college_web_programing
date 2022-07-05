@@ -1,0 +1,7 @@
+What Is Data Mining?
+Data mining is a process used by companies to turn raw data into useful information. By using software to look for patterns in large batches of data, businesses can learn more about their customers to develop more effective marketing strategies, increase sales and decrease costs. Data mining depends on effective data collection, warehousing, and computer processing.
+Data mining is the process of analyzing a large batch of information to discern trends and patterns.
+Data mining can be used by corporations for everything from learning about what customers are interested in or want to buy to fraud detection and spam filtering.
+Data mining programs break down patterns and connections in data based on what information users request or provide.
+Social media companies use data mining techniques to commodify their users in order to generate profit.
+This use of data mining has come under criticism lately s users are often unaware of the data mining happening with their personal information, especially when it is used to influence preferences.

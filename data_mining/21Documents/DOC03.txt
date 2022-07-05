@@ -1,0 +1,13 @@
+software engineering
+
+Software engineering is the application of principles used in the field of engineering, which usually deals with physical systems, to the design, development, testing, deployment and management of software systems.
+
+The field of software engineering applies the disciplined, structured approach to programming that is used in engineering to software development with the stated goal of improving the quality, time and budget efficiency, along with the assurance of structured testing and engineer certification.
+
+Software engineering is typically used for large and intricate software systems rather than single applications or programs. Development, however, is simply one phase of the process. While a software engineer is typically responsible for the design of systems, programmers are often responsible for coding its implementation.
+
+Software engineering involves a number of fields that cover the process of engineering software and certification including: requirements gathering, software design, software construction, software maintenance, software configuration management, software engineering management, software development process management and creation, software engineering models and methods, software quality, software engineering professional practices as well as foundational computing and mathematical and engineering study.
+
+Though the original use of the term is uncertain, the first software engineering conference was held and sponsored by NATO in 1968. The conference addressed the inconsistency and unreliability in software development as well as the need for better quality and reliability. The conference gathered international experts who agreed the systematic approach of physical world engineering should be applied to software development, as it already was developed with those goals in mind.
+
+The Software Engineering Institute (SEI) is one organization that works with U.S. engineers, enterprise, education and government institutions to improve the efficiency of the work of software engineering projects and processes and it home to the Computer Emergency Response Team (CERT).

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  <meta charset="utf-8">
+  <title>演習8-2</title>
+  <style>
+    div {
+      position: relative;
+      text-align:center;
+      height: 100px;
+    }
+    div.base {
+      position: relative;
+      text-align:center;
+      height: 500px;
+      background-color: gray;
+      z-index: 0;
+    }
+    div.fixed1 {
+      position: absolute;
+      width: 200px;
+      background-color: pink;
+      z-index: 1;
+    }
+    div.fixed2 {
+      position: absolute;
+      width: 200px;
+      background-color: lightgreen;
+      right: 0;
+      z-index: 1;
+    }
+    div.fixed3 {
+      position: absolute;
+      width: 200px;
+      bottom: 0;
+      background-color: lightblue;
+      z-index: 1;
+    }
+    div.fixed4 {
+      position: absolute;
+      width: 200px;
+      bottom: 0;
+      right: 0;
+      background-color: lightyellow;
+      z-index: 1;
+    }
+    div.fixed5 {
+      position: absolute;
+      width: 200px;
+      background-color: purple;
+      top: 50%;
+      left: 50%;
+      margin: -50px 0 0 -100px;
+      z-index: 1;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="base">
+      <div class="fixed1">Delicious</div>
+      <div class="fixed2">Cʼest bon</div>
+      <div class="fixed3">Buono</div>
+      <div class="fixed4">おいしい</div>
+      <div class="fixed5">中⼼</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+Software Engineering Definition: What is Software Engineering?
+What is software engineering? It is a branch of engineering that deals with the development of software products. It operates within a set of principles, best practices, and methods that have been carefully honed throughout the years, changing as software and technology change.
+
+Software engineering leads to a product that is reliable, efficient, and effective at what it does. While software engineering can lead to products that do not do this, the product will almost always go back into the production stage.
+
+So, what is the complete definition of software engineering?
+
+The IEEE fully defines software engineering as:
+
+1. The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering to software.
+
+What the software engineering meaning doesn’t explain is that everything that has been software engineered needs to work on real machines in real situations, not within.

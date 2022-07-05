@@ -1,0 +1,15 @@
+Software is more than just a program code. A program is an executable code, which serves some computational purpose. Software is considered to be collection of executable programming code, associated libraries and documentations. Software, when made for a specific requirement is called software product.
+
+Engineering on the other hand, is all about developing products, using well-defined, scientific principles and methods.
+Software engineering is an engineering branch associated with development of software product using well-defined scientific principles, methods and procedures. The outcome of software engineering is an efficient and reliable software product.
+
+Definitions
+IEEE defines software engineering as:
+
+(1) The application of a systematic, disciplined, quantifiable approach to the development, operation and maintenance of software; that is, the application of engineering to software.
+
+(2) The study of approaches as in the above statement.
+
+Fritz Bauer, a German computer scientist, defines software engineering as:
+
+Software engineering is the establishment and use of sound engineering principles in order to obtain economically software that is reliable and work efficiently on real machines.
