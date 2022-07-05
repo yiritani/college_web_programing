@@ -63,7 +63,7 @@ class IDF(IdfUtil):
 		for file_name in document_list:
 			text = cls.read_21documents(file_name)
 			text_corpus = text.split('\n')
-			X = vectorizer.fit_transform(text_corpus)
+			vectorizer.fit_transform(text_corpus)
 			for word in vectorizer.get_feature_names():
 				if word not in idf_dict:
 					idf_dict[word] = 0
@@ -85,7 +85,7 @@ class FreqDamp(IdfUtil):
 		for file_name in document_list:
 			text = cls.read_21documents(file_name)
 			text_corpus = text.split('\n')
-			X = vectorizer.fit_transform(text_corpus)
+			vectorizer.fit_transform(text_corpus)
 			for word in vectorizer.get_feature_names():
 				if word not in freq_damp_dict:
 					freq_damp_dict[word] = 0
@@ -96,7 +96,42 @@ class FreqDamp(IdfUtil):
 		print(freq_damp_dict)
 
 
+class NormalizedFreq(IdfUtil):
+	@classmethod
+	def calc_normalized_freq(cls):
+		normalized_freq_dict = {}
+		document_list = cls.get_all_documents()
+		for file_name in document_list:
+			text = cls.read_21documents(file_name)
+			text_corpus = text.split('\n')
+			vectorizer.fit_transform(text_corpus)
+			for word in vectorizer.get_feature_names():
+				if word not in normalized_freq_dict:
+					normalized_freq_dict[word] = 0
+				normalized_freq_dict[word] += 1
+		for key, value in normalized_freq_dict.items():
+			normalized_freq_dict[key] = round(value / len(document_list), 2)
+		print('=' * 30, 'Normalized Frequency', '=' * 30)
+		print(normalized_freq_dict)
+
+
+class CosineSimilarity(IdfUtil):
+	@classmethod
+	def calc_cosine_similarity(cls):
+		document_list = cls.get_all_documents()
+		for file_name in document_list:
+			text = cls.read_21documents(file_name)
+			text_corpus = text.split('\n')
+			vectorizer.fit_transform(text_corpus)
+			X = vectorizer.transform(text_corpus)
+			print(X.toarray())
+			print('\n')
+
+
 if __name__ == '__main__':
 	# WordVector()
 	# IDF()
 	FreqDamp()
+	print(NormalizedFreq())
+	CosineSimilarity.calc_cosine_similarity()
+
