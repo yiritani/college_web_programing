@@ -134,6 +134,7 @@ class CosineSimilarity(IdfUtil):
 
 
 class Jaccard(IdfUtil):
+	print('Jaccard')
 	@classmethod
 	def jaccard(cls, doc1, doc2):
 		data1 = cls.read_21documents(doc1).split(' ')
@@ -183,9 +184,8 @@ if __name__ == '__main__':
 	# 	CosineSimilarity.calc_cosine_similarity(target_doc1)
 
 	# (5)
-	# print('Jaccard')
-	# for target_doc in [target_doc1, target_doc2, target_doc3]:
-	# 	Jaccard.jaccard(target_doc[0], target_doc[1])
+	for target_doc in [target_doc1, target_doc2, target_doc3]:
+		Jaccard.jaccard(target_doc[0], target_doc[1])
 
 	# (6)
-	Kmeans.separate_clusters(['21Documents/DOC03.txt', '21Documents/DOC07.txt', '21Documents/DOC11.txt'])
+	# Kmeans.separate_clusters(['21Documents/DOC03.txt', '21Documents/DOC07.txt', '21Documents/DOC11.txt'])
