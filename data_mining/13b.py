@@ -161,17 +161,16 @@ class Kmeans(IdfUtil):
 
 	def separate_kmeans_clusters(self, input_docs):
 		for doc_name in input_docs:
-			X = self.result_df.loc[doc_name][0]
-			sc = preprocessing.StandardScaler()
-			sc.fit(X)
-			X_norm = sc.transform(X)
-			cls = KMeans(n_clusters=self.cluster_num)
-			result = cls.fit(X_norm)
-			print(result.labels_)
-			# 結果を出力
-			plt.scatter(X_norm[:, 0], X_norm[:, 1], c=result.labels_)
-			plt.scatter(result.cluster_centers_[:, 0], result.cluster_centers_[:, 1], s=250, marker='*', c='red')
-			plt.show()
+			try:
+				X = self.result_df.loc[doc_name][0]
+				sc = preprocessing.StandardScaler()
+				sc.fit(X)
+				X_norm = sc.transform(X)
+				cls = KMeans(n_clusters=self.cluster_num)
+				result = cls.fit(X_norm)
+				print(result.labels_)
+			except:
+				pass
 
 	def convert_vector(self):
 		for doc in self.get_all_documents():
@@ -180,6 +179,7 @@ class Kmeans(IdfUtil):
 			vectorizer.fit_transform(text_corpus)
 			X = vectorizer.transform(text_corpus)
 			self.result_df.loc[doc] = [X.toarray()]
+
 
 
 if __name__ == '__main__':
