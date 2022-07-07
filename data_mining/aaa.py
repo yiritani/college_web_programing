@@ -1,15 +1,25 @@
+from matplotlib import pyplot as plt
+from sklearn import datasets, preprocessing
+from sklearn.cluster import KMeans
 import numpy as np
+import pandas as pd
 
-print('M21W0B09')
-X = np.array([[0, 0, 1, 1], [1, 1, 1, 0], [1, 0, 1, 0], [0, 1, 1, 1]])
-y = np.array([[0, 1, 1, 0]]).T
-syn0 = 2 * np.random.random((3, 4)) - 1
-syn1 = 2 * np.random.random((4, 1)) - 1
-for j in range(60000):
-	l1 = 1 / (1 + np.exp(-(np.dot(X, syn0))))
-	l2 = 1 / (1 + np.exp(-(np.dot(11, syn1))))
-	l2_delta = (y - 12) * (12 * (1 - 12))
-	l1_delta = l2_delta.dot(syn1.T) * (11 * (1 - 11))
-	syn1 += l1.T.dot(l2_delta)
-	syn0 += X.T.dot(l1_delta)
-print(syn0)
+# datasetの読み込み
+wine_data = datasets.load_wine()
+# DataFrameに変換
+df = pd.DataFrame(wine_data.data, columns=wine_data.feature_names)
+print(df.head())
+# データの整形
+X = df[["alcohol", "color_intensity"]]
+print(X)
+sc = preprocessing.StandardScaler()
+sc.fit(X)
+X_norm = sc.transform(X)
+
+# クラスタリング
+cls = KMeans(n_clusters=3)
+result = cls.fit(X_norm)
+# 結果を出力
+plt.scatter(X_norm[:, 0], X_norm[:, 1], c=result.labels_)
+plt.scatter(result.cluster_centers_[:, 0], result.cluster_centers_[:, 1], s=250, marker='*', c='red')
+plt.show()

@@ -13,6 +13,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
+from sklearn import datasets, preprocessing
+from matplotlib import pyplot as plt
 
 stop_word_list = [i[0] for i in csv.reader(open('stop_word.csv', 'r'))]
 vectorizer = TfidfVectorizer()
@@ -136,8 +138,6 @@ class CosineSimilarity(IdfUtil):
 
 
 class Jaccard(IdfUtil):
-	print('Jaccard')
-
 	@classmethod
 	def jaccard(cls, doc1, doc2):
 		data1 = cls.read_21documents(doc1).split(' ')
@@ -159,19 +159,19 @@ class Kmeans(IdfUtil):
 		self.result_df = pd.DataFrame(columns=['vec'])
 		self.convert_vector()
 
-	# def text2vec(self):
-	# 	for index, doc in enumerate(self.get_all_documents()):
-	# 		text = self.read_21documents(doc)
-	# 		text_corpus = text.split('\n')
-	# 		vectorizer.fit_transform(text_corpus)
-	# 		X = vectorizer.transform(text_corpus)
-	# 		self.result_df.loc[doc] = [X.toarray()]
-	#
 	def separate_kmeans_clusters(self, input_docs):
-		kmeans = KMeans(n_clusters=self.cluster_num, random_state=0)
-		scaler = StandardScaler()
-		scaled_features = scaler.fit_transform(self.result_df)
-
+		for doc_name in input_docs:
+			X = self.result_df.loc[doc_name][0]
+			sc = preprocessing.StandardScaler()
+			sc.fit(X)
+			X_norm = sc.transform(X)
+			cls = KMeans(n_clusters=self.cluster_num)
+			result = cls.fit(X_norm)
+			print(result.labels_)
+			# 結果を出力
+			plt.scatter(X_norm[:, 0], X_norm[:, 1], c=result.labels_)
+			plt.scatter(result.cluster_centers_[:, 0], result.cluster_centers_[:, 1], s=250, marker='*', c='red')
+			plt.show()
 
 	def convert_vector(self):
 		for doc in self.get_all_documents():
@@ -184,25 +184,24 @@ class Kmeans(IdfUtil):
 
 if __name__ == '__main__':
 	# (1)
-	# WordVector()
+	WordVector()
 	# (2)
 	# IDF()
 	# (3)
-	# FreqDamp()
+	FreqDamp()
 
 	target_doc1 = ('21Documents/DOC01.txt', '21Documents/DOC02.txt')
 	target_doc2 = ('21Documents/DOC01.txt', '21Documents/DOC15.txt')
 	target_doc3 = ('21Documents/DOC20.txt', '21Documents/DOC21.txt')
 
 	# (4)
-	# for target_doc in [target_doc1, target_doc2, target_doc3]:
-	# 	CosineSimilarity.calc_cosine_similarity(target_doc1)
+	for target_doc in [target_doc1, target_doc2, target_doc3]:
+		CosineSimilarity.calc_cosine_similarity(target_doc1)
 
 	# (5)
-	# for target_doc in [target_doc1, target_doc2, target_doc3]:
-	# 	Jaccard.jaccard(target_doc[0], target_doc[1])
+	for target_doc in [target_doc1, target_doc2, target_doc3]:
+		Jaccard.jaccard(target_doc[0], target_doc[1])
 
 	# (6)
 	KmeansObj = Kmeans(3)
-	document_list = ['21Documents/DOC03.txt', '21Documents/DOC07.txt', '21Documents/DOC11.txt']
-	KmeansObj.separate_kmeans_clusters(document_list)
+	KmeansObj.separate_kmeans_clusters(IdfUtil.get_all_documents())
