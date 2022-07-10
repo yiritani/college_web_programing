@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>Canvasアニメーション</title>
+	<style>
+	canvas {border : 1px solid gray;}
+</style>
+</head>
+<body>
+	<h1>Canvasアニメーション</h1>
+	<canvas width="640px" height="480px"></canvas>
+	<br><button id="btn">開始</button>
+
+	<script>
+    let c={x:0,y:0,r:100}
+    let timerID = null;
+    const cv = document.querySelector('canvas')
+    const gc = cv.getContext('2d')
+    const btn = document.querySelector('#btn')
+    btn.addEventListener('click',()=>{
+        console.log(timerID)
+        if (timerID==null) {
+            timerID=setInterval(draw, 10);
+        }
+    })
+
+    function draw() {
+        c.x += 1;
+        c.y += 1;
+        gc.clearRect(0,0,cv.width,cv.height);
+        gc.beginPath();
+        gc.fillStyle = 'red';
+        gc.arc(c.x,c.y,c.r,0,Math.PI*2,true);
+        gc.fill();
+    }
+
+	</script>
+</body>
+</html>
