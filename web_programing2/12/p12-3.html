@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>Canvasアニメーション</title>
+	<style>
+	canvas {border : 1px solid gray;}
+</style>
+</head>
+<body>
+	<h1>Canvasアニメーション</h1>
+	<canvas width="600px" height="400px"></canvas>
+	<br><button id="btn">開始</button>
+
+	<script>
+      let c={x:0,y:0,r:100}
+      let timerID = null;
+      const cv = document.querySelector('canvas')
+      const gc = cv.getContext('2d')
+      const btn = document.querySelector('#btn')
+      const colorArray = ['red','blue','green','yellow','orange','pink']
+      btn.addEventListener('click',()=>{
+          console.log(timerID)
+		      generateRandomCircle()
+      })
+
+			function generateRandomNum(min, max) {
+				return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+      function chooseRandomcolor() {
+				return colorArray[Math.floor(Math.random() * colorArray.length)];
+			}
+
+		function generateRandomCircle() {
+        c.x = generateRandomNum(50, 550);
+        c.y = generateRandomNum(50, 350);
+        c.r = generateRandomNum(20, 50);
+        gc.beginPath();
+        gc.strokeStyle = chooseRandomcolor();
+        gc.arc(c.x,c.y,c.r,0,Math.PI*2,true);
+        gc.lineWidth = 2;
+        gc.stroke();
+		}
+
+	</script>
+</body>
+</html>
