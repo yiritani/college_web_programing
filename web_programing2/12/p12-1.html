@@ -19,7 +19,6 @@
     const gc = cv.getContext('2d')
     const btn = document.querySelector('#btn')
     btn.addEventListener('click',()=>{
-        console.log(timerID)
         if (timerID==null) {
             timerID=setInterval(draw, 1);
         }else{
