@@ -21,8 +21,11 @@
     btn.addEventListener('click',()=>{
         console.log(timerID)
         if (timerID==null) {
-            timerID=setInterval(draw, 10);
-        }
+            timerID=setInterval(draw, 1);
+        }else{
+						clearInterval(timerID);
+						timerID=null;
+				}
     })
 
     function draw() {
