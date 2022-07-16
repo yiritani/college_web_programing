@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>p10-2 M21W0B09 入谷雄介</title>
+</head>
+<body>
+  <h1>演習10-2 入力値を得る</h1>
+  <div style="border: solid">
+  <div class="textbox" style="display: flex">
+    <p class="title">テキストボックス</p>
+    <div class="inputArea">
+    <label for="textbox"></label><input type="text" id="textbox">
+    </div>
+    <span id="textboxResult"></span>
+  </div>
+  <div class="textArea" style="display: flex">
+    <p class="title">テキストエリア（複数行）</p>
+    <div class="inputArea">
+      <label for="textarea"></label><textarea id="textarea"></textarea>
+    </div>
+    <span id="textAreaResult"></span>
+  </div>
+  <div class="slider" style="display: flex">
+    <p class="title">スライダー</p>
+    <div class="inputArea">
+      <label for="slider"></label><input type="range" id="slider">
+    </div>
+    <span id="sliderResult"></span>
+  </div>
+  <div class="checkbox" style="display: flex">
+    <p class="title">チェックボックス</p>
+    <div class="inputArea">
+      <label><input type="checkbox" name="checkbox" value="Windows">Windows</label>
+      <label><input type="checkbox" name="checkbox" value="Mac OS">Mac OS</label>
+      <label><input type="checkbox" name="checkbox" value="UNIX">UNI</label>X
+    </div>
+    <span id="checkboxresult"></span>
+  </div>
+  <div class="radio" style="display: flex">
+    <p class="title">ラジオボタン</p>
+    <div class="inputArea">
+      <label><input type="radio" name="radio" value="テニス">テニス</label>
+      <label><input type="radio" name="radio" value="バスケットボール">バスケットボール</label>
+      <label><input type="radio" name="radio" value="水泳">水泳</label>
+    </div>
+    <span id="radioresult"></span>
+  </div>
+  <div class="selectbox" style="display: flex">
+    <p class="title">メニュー（単一）</p>
+    <label>
+     <div class="inputArea">
+     <select name="selectbox" id="selectBoxId">
+        <option value="札幌">札幌</option>
+        <option value="仙台">仙台</option>
+        <option value="大宮">大宮</option>
+      </select>
+    </div>
+    </label>
+    <span id="selectboxresult"></span>
+  </div>
+  <div class="multiSelect" style="display: flex">
+    <p class="title">メニュー（複数）</p>
+    <label>
+    <div class="inputArea">
+      <select name="selectbox" id="multiSelectId" multiple>
+        <option value="清水寺" name="multiselectBox">清水寺</option>
+        <option value="平安神宮" name="multiselectBox">平安神宮</option>
+        <option value="八坂神社" name="multiselectBox">八坂神社</option>
+        <option value="伏見稲荷" name="multiselectBox">伏見稲荷</option>
+      </select>
+    </div>
+    </label>
+    <span id="multiSelectresult"></span>
+  </div>
+  </div>
+</body>
+<script src="js/p10-2.js">
+</script>
+<style>
+  .title {
+      background-color: #f0f0f0;
+      width: 300px;
+  }
+  .inputArea {
+      width: 300px;
+      padding: 3px;
+  }
+  div {
+    border-width:1px;
+    border-style: solid;
+  }
+</style>
+</html>

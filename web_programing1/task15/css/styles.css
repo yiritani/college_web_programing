@@ -1,0 +1,162 @@
+@charset "UTF-8";
+/* 共通部分 ----------------------------- */
+body {
+  line-height: 1.7;
+  color: #432;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+/* HEADER ----------------------------- */
+.logo {
+  width: 180px;
+  margin-top: 20px;
+}
+.main-navi {
+  display: flex;
+  font-size: 1.2em;
+  list-style-type: none;
+  margin-top: 40px;
+}
+.main-navi li {
+  margin-left: 30px;
+}
+.main-navi a {
+  color: #432;
+}
+.main-navi a:hover {
+  color: #0bd;
+}
+.page-header {
+  display: flex;
+  justify-content: space-between;
+}
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+/* HOME ----------------------------- */
+.home-content {
+  text-align: center;
+  margin-top: 30%;
+}
+.home-content p {
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+/* 見出し */
+.page-title {
+  font-size: 3em;
+  font-weight: normal;
+  font-family: serif;
+}
+/* 背景画像 */
+#home {
+  background-image: url(../img/bg-main.jpg);
+  min-height: 100vh;
+}
+.bg {
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* お寺 ----------------------------- */
+#temple {
+    background-image: url(../img/bg-kyoto.jpg);
+    height: 270px;
+    margin-bottom: 40px;
+}
+#temple .page-title {
+    text-align: center;
+}
+
+/* モバイル対応 ----------------------------- */
+@media (max-width:600px) {
+  .page-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-navi {
+    font-size: 0.9em;
+    margin-top: 10px;
+  }
+  .page-title {
+    font-size: 2.4em;
+  }
+  .temple-content {
+      flex-direction: column;
+      align-items: center;
+  }
+  article, aside {
+      width: 100%;
+  }
+  .temple-section {
+      flex-direction: column;
+      align-items: center;
+  }
+  .temple-section img {
+      height: 240px;
+      width: 320px;
+  }
+
+}
+
+/* footer ----------------------------- */
+footer {
+    background-color: #432;
+    text-align: center;
+    margin-top: 50px;
+}
+footer p {
+    color: #fff;
+    font-size: 0.9em;
+}
+
+/* メイン部分 ----------------------------- */
+articel {
+    width: 70%;
+}
+aside {
+    width: 45%;
+}
+
+/* articleとasideを横並び ----------------------------- */
+.temple-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.temple-content section{
+    margin-bottom: 40px;
+}
+.temple-section {
+    display: flex;
+}
+.temple-section img {
+    height: 160px;
+    margin: 10px;
+}
+.aside-title {
+    padding: 0 8px 8px;
+    border-bottom: 2px solid #0bd;
+    font-weight: normal;
+}
+.aside-menu {
+    list-style-type: none;
+}
+.aside-menu li {
+    border-bottom: 1px solid #0bd;
+}
+.aside-menu a {
+    color: #432;
+    padding: 10px;
+    display: block;
+}
+.aside-menu a:hover {
+    color: #0bd;
+}
