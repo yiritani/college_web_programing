@@ -1,162 +1,109 @@
 @charset "UTF-8";
-/* 共通部分 ----------------------------- */
-body {
-  line-height: 1.7;
-  color: #432;
+#img_div {
+    background-color: #000;
+    width: 100%;
+    position: relative;
+}
+#img_div p{
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%,-50%);
+    font-size: 40px;
+    color:#fff;
+    margin:0;
+}
+#img_div img {
+    opacity: 0.5;
+    display:block;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+.fadein {
+    animation: fadeIn 5s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+nav {
+    width: 100%;
+    height: 70px;
+    background-color: dimgray;
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+ul {
+    display: flex;
+}
+li {
+    list-style: none;
+}
+nav li img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 a {
-  text-decoration: none;
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin-right: 35px;
 }
-img {
-  max-width: 100%;
+.news {
+    border-bottom: double 5px #FFC778;
 }
-/* HEADER ----------------------------- */
-.logo {
-  width: 180px;
-  margin-top: 20px;
+.wrapper{
+    width: 500px;
+    padding: 8px;
+    border: .5px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-bottom: 24px;
 }
-.main-navi {
-  display: flex;
-  font-size: 1.2em;
-  list-style-type: none;
-  margin-top: 40px;
-}
-.main-navi li {
-  margin-left: 30px;
-}
-.main-navi a {
-  color: #432;
-}
-.main-navi a:hover {
-  color: #0bd;
-}
-.page-header {
-  display: flex;
-  justify-content: space-between;
-}
-.wrap {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 2%;
-}
-/* HOME ----------------------------- */
-.home-content {
-  text-align: center;
-  margin-top: 30%;
-}
-.home-content p {
-  font-size: 1.1em;
-  margin-top: 10px;
-}
-/* 見出し */
-.page-title {
-  font-size: 3em;
-  font-weight: normal;
-  font-family: serif;
-}
-/* 背景画像 */
-#home {
-  background-image: url(../img/bg-main.jpg);
-  min-height: 100vh;
-}
-.bg {
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
+.img-wrapper img{
+    width: 100%;
+    vertical-align: bottom;
 }
 
-/* お寺 ----------------------------- */
-#temple {
-    background-image: url(../img/bg-kyoto.jpg);
-    height: 270px;
-    margin-bottom: 40px;
-}
-#temple .page-title {
-    text-align: center;
+.content-wrapper{
+    padding: 8px 0;
 }
 
-/* モバイル対応 ----------------------------- */
-@media (max-width:600px) {
-  .page-header {
-    flex-direction: column;
-    align-items: center;
-  }
-  .main-navi {
-    font-size: 0.9em;
-    margin-top: 10px;
-  }
-  .page-title {
-    font-size: 2.4em;
-  }
-  .temple-content {
-      flex-direction: column;
-      align-items: center;
-  }
-  article, aside {
-      width: 100%;
-  }
-  .temple-section {
-      flex-direction: column;
-      align-items: center;
-  }
-  .temple-section img {
-      height: 240px;
-      width: 320px;
-  }
-
+.content-wrapper .heading{
+    margin: 0 0 8px;
 }
 
-/* footer ----------------------------- */
-footer {
-    background-color: #432;
-    text-align: center;
-    margin-top: 50px;
-}
-footer p {
-    color: #fff;
-    font-size: 0.9em;
+.content-wrapper .text{
+    margin: 0;
+    font-size: 14px;
 }
 
-/* メイン部分 ----------------------------- */
-articel {
-    width: 70%;
-}
-aside {
-    width: 45%;
-}
+@media(min-width: 600px){
+    .flex-container{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
 
-/* articleとasideを横並び ----------------------------- */
-.temple-content {
+    .wrapper{
+        width: 30%;
+        margin: 0;
+    }
+}
+.sub_content {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
-.temple-content section{
-    margin-bottom: 40px;
-}
-.temple-section {
-    display: flex;
-}
-.temple-section img {
-    height: 160px;
-    margin: 10px;
-}
-.aside-title {
-    padding: 0 8px 8px;
-    border-bottom: 2px solid #0bd;
-    font-weight: normal;
-}
-.aside-menu {
-    list-style-type: none;
-}
-.aside-menu li {
-    border-bottom: 1px solid #0bd;
-}
-.aside-menu a {
-    color: #432;
-    padding: 10px;
-    display: block;
-}
-.aside-menu a:hover {
-    color: #0bd;
+.sub_content img {
+    width: 300px;
+    height: 200px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
