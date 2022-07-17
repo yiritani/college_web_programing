@@ -21,33 +21,35 @@
     <h3>03-1234-4567（代表番号）</h3>
     <h3>受付時間：平日10:00～19:00</h3><br>
   </div>
-  <div class="contact_form">
-    <div class="contact_form-Item">
-      <p class="contact_form-Item-Label"><span class="contact_form-Item-Label-Required">必須</span>お名前</p>
-      <label>
-        <input type="text" class="contact_form-Item-Input" placeholder="例）山田太郎">
-      </label>
-    </div>
-    <div class="contact_form-Item">
-      <p class="contact_form-Item-Label"><span class="contact_form-Item-Label-Required">必須</span>電話番号</p>
-      <label>
-        <input type="text" class="contact_form-Item-Input" placeholder="例）000-0000-0000">
-      </label>
-    </div>
-    <div class="contact_form-Item">
-      <p class="contact_form-Item-Label"><span class="contact_form-Item-Label-Required">必須</span>メールアドレス</p>
-      <label>
-        <input type="email" class="contact_form-Item-Input" placeholder="例）example@gmail.com">
-      </label>
-    </div>
-    <div class="contact_form-Item">
-      <p class="contact_form-Item-Label isMsg"><span class="contact_form-Item-Label-Required">必須</span>お問い合わせ内容</p>
-      <label>
-        <textarea class="contact_form-Item-Textarea"></textarea>
-      </label>
-    </div>
-    <input type="submit" class="contact_form-Btn" value="送信する">
-  </div>
+  <form class="companyProfile">
+    <dl>
+      <dt>お名前</dt>
+      <dd><label>
+        <input type="text" class="contact_form" placeholder="例）山田太郎">
+      </label></dd>
+    </dl>
+    <dl>
+      <dt>電話番号</dt>
+      <dd><label>
+        <input type="text" class="contact_form" placeholder="例）000-0000-0000">
+      </label></dd>
+    </dl>
+    <dl>
+      <dt>メールアドレス</dt>
+      <dd><label>
+        <input type="email" class="contact_form" placeholder="例）example@gmail.com">
+      </label></dd>
+    </dl>
+    <dl>
+      <dt>お問い合わせ内容</dt>
+      <dd><label>
+        <textarea class="contact_form"></textarea>
+      </label></dd>
+    </dl>
+    <dl>
+      <input type="submit" class="contact_form-Btn" value="送信する">
+    </dl>
+  </form>
 <footer>
   <div class="wrap">
     <p><small>&copy; copyright2021 KCGI</small></p>
