@@ -8,7 +8,7 @@
     position: absolute;
     top: 50%;
     left: 35%;
-    transform: translate(-50%,-50%);
+    transcontact_form: translate(-50%,-50%);
     font-size: 40px;
     color:#fff;
     margin:0;
@@ -49,7 +49,7 @@
 .page-content img {
     max-width: 60%;
     left: 50%;
-    transform: translateX(30%);
+    transcontact_form: translateX(30%);
     background:#fff;
 }
 .detail {
@@ -196,19 +196,21 @@ a {
     padding: 0;
     size: 5em;
 }
-
-.Form {
+.contact_area {
+    text-align: center;
+}
+.contact_form {
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
     max-width: 720px;
 }
 @media screen and (max-width: 480px) {
-    .Form {
+    .contact_form {
         margin-top: 40px;
     }
 }
-.Form-Item {
+.contact_form-Item {
 
     padding-top: 24px;
     padding-bottom: 24px;
@@ -217,7 +219,7 @@ a {
     align-items: center;
 }
 @media screen and (max-width: 480px) {
-    .Form-Item {
+    .contact_form-Item {
         padding-left: 14px;
         padding-right: 14px;
         padding-top: 16px;
@@ -225,10 +227,10 @@ a {
         flex-wrap: wrap;
     }
 }
-.Form-Item:nth-child(5) {
+.contact_form-Item:nth-child(5) {
 
 }
-.Form-Item-Label {
+.contact_form-Item-Label {
     width: 100%;
     max-width: 248px;
     letter-spacing: 0.05em;
@@ -236,23 +238,23 @@ a {
     font-size: 18px;
 }
 @media screen and (max-width: 480px) {
-    .Form-Item-Label {
+    .contact_form-Item-Label {
         max-width: inherit;
         display: flex;
         align-items: center;
         font-size: 15px;
     }
 }
-.Form-Item-Label.isMsg {
+.contact_form-Item-Label.isMsg {
     margin-top: 8px;
     margin-bottom: auto;
 }
 @media screen and (max-width: 480px) {
-    .Form-Item-Label.isMsg {
+    .contact_form-Item-Label.isMsg {
         margin-top: 0;
     }
 }
-.Form-Item-Label-Required {
+.contact_form-Item-Label-Required {
     border-radius: 6px;
     margin-right: 8px;
     padding-top: 8px;
@@ -265,7 +267,7 @@ a {
     font-size: 14px;
 }
 @media screen and (max-width: 480px) {
-    .Form-Item-Label-Required {
+    .contact_form-Item-Label-Required {
         border-radius: 4px;
         padding-top: 4px;
         padding-bottom: 4px;
@@ -273,7 +275,7 @@ a {
         font-size: 10px;
     }
 }
-.Form-Item-Input {
+.contact_form-Item-Input {
     border: 1px solid #ddd;
     border-radius: 6px;
     margin-left: 40px;
@@ -287,7 +289,7 @@ a {
     font-size: 18px;
 }
 @media screen and (max-width: 480px) {
-    .Form-Item-Input {
+    .contact_form-Item-Input {
         margin-left: 0;
         margin-top: 18px;
         height: 40px;
@@ -295,7 +297,7 @@ a {
         font-size: 15px;
     }
 }
-.Form-Item-Textarea {
+.contact_form-Item-Textarea {
     border: 1px solid #ddd;
     border-radius: 6px;
     margin-left: 40px;
@@ -309,7 +311,7 @@ a {
     font-size: 18px;
 }
 @media screen and (max-width: 480px) {
-    .Form-Item-Textarea {
+    .contact_form-Item-Textarea {
         margin-top: 18px;
         margin-left: 0;
         height: 200px;
@@ -317,7 +319,7 @@ a {
         font-size: 15px;
     }
 }
-.Form-Btn {
+.contact_form-Btn {
     border-radius: 6px;
     margin-top: 32px;
     margin-left: auto;
@@ -333,7 +335,7 @@ a {
     font-size: 20px;
 }
 @media screen and (max-width: 480px) {
-    .Form-Btn {
+    .contact_form-Btn {
         margin-top: 24px;
         padding-top: 8px;
         padding-bottom: 8px;

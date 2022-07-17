@@ -6,40 +6,48 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="img/common/favicon.png"> </head>
 <body>
-<nav>
-  <ul id="header_navi">
-    <li><a href="index.html"><img src="img/common/logo.png" alt=""></a></li>
-    <li><a href="product.html">商品一覧</a></li>
-    <li><a href="company.html">企業情報</a></li>
-    <li><a href="recruit.html">採用ページ</a></li>
-    <li><a href="contact.html">お問合せ</a></li>
-  </ul>
-</nav>
-<h3>お電話でのお問い合わせはこちら</h3>
-<h3>TEL:03-6543-9876（部署直通）</h3>
-<h3>03-1234-4567（代表番号）</h3>
-<h3>受付時間：平日10:00～19:00</h3><br>
-<div class="contact_form">
-  <div class="Form">
-    <div class="Form-Item">
-      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>お名前</p>
-      <input type="text" class="Form-Item-Input" placeholder="例）山田太郎">
-    </div>
-    <div class="Form-Item">
-      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>電話番号</p>
-      <input type="text" class="Form-Item-Input" placeholder="例）000-0000-0000">
-    </div>
-    <div class="Form-Item">
-      <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>メールアドレス</p>
-      <input type="email" class="Form-Item-Input" placeholder="例）example@gmail.com">
-    </div>
-    <div class="Form-Item">
-      <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>お問い合わせ内容</p>
-      <textarea class="Form-Item-Textarea"></textarea>
-    </div>
-    <input type="submit" class="Form-Btn" value="送信する">
+  <nav>
+    <ul id="header_navi">
+      <li><a href="index.html"><img src="img/common/logo.png" alt=""></a></li>
+      <li><a href="product.html">商品一覧</a></li>
+      <li><a href="company.html">企業情報</a></li>
+      <li><a href="recruit.html">採用ページ</a></li>
+      <li><a href="contact.html">お問合せ</a></li>
+    </ul>
+  </nav>
+  <div class="contact_area">
+    <h3>お電話でのお問い合わせはこちら</h3>
+    <h3>TEL:03-6543-9876（部署直通）</h3>
+    <h3>03-1234-4567（代表番号）</h3>
+    <h3>受付時間：平日10:00～19:00</h3><br>
   </div>
-</div>
+  <div class="contact_form">
+    <div class="contact_form-Item">
+      <p class="contact_form-Item-Label"><span class="contact_form-Item-Label-Required">必須</span>お名前</p>
+      <label>
+        <input type="text" class="contact_form-Item-Input" placeholder="例）山田太郎">
+      </label>
+    </div>
+    <div class="contact_form-Item">
+      <p class="contact_form-Item-Label"><span class="contact_form-Item-Label-Required">必須</span>電話番号</p>
+      <label>
+        <input type="text" class="contact_form-Item-Input" placeholder="例）000-0000-0000">
+      </label>
+    </div>
+    <div class="contact_form-Item">
+      <p class="contact_form-Item-Label"><span class="contact_form-Item-Label-Required">必須</span>メールアドレス</p>
+      <label>
+        <input type="email" class="contact_form-Item-Input" placeholder="例）example@gmail.com">
+      </label>
+    </div>
+    <div class="contact_form-Item">
+      <p class="contact_form-Item-Label isMsg"><span class="contact_form-Item-Label-Required">必須</span>お問い合わせ内容</p>
+      <label>
+        <textarea class="contact_form-Item-Textarea"></textarea>
+      </label>
+    </div>
+    <input type="submit" class="contact_form-Btn" value="送信する">
+  </div>
 <footer>
   <div class="wrap">
     <p><small>&copy; copyright2021 KCGI</small></p>
