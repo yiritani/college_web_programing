@@ -41,6 +41,23 @@
     margin-left: auto;
     margin-right: auto;
 }
+.page-content h3 {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin-top: 30px;
+}
+.page-content img {
+    max-width: 60%;
+    left: 50%;
+    transform: translateX(30%);
+    background:#fff;
+}
+.detail {
+    margin-top: 20px;
+    background-color: #FFC778;
+    text-align: center;
+    padding: 20px;
+}
 nav {
     width: 100%;
     height: 70px;
@@ -87,6 +104,7 @@ a {
 
 .content-wrapper .heading{
     margin: 0 0 8px;
+    text-align: center;
 }
 
 .content-wrapper .text{
@@ -151,18 +169,15 @@ a {
     border: none;
     padding: 0;
 }
-
 #recruit_top .img-haikei {
     max-height: 800px;
     width: 100%;
 }
-
 #recruit_top .img-haikei video.movieBg {
     width: 100%;
     height: auto;
     display: block;
 }
-
 #recruit_top img {
     position: absolute;
     top: 0;
@@ -173,9 +188,15 @@ a {
     display: block;
     width: 500px;
 }
-.about_us {
-    background-color: #FFC778;
+.recruit_copy {
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    border: none;
+    padding: 0;
+    size: 5em;
 }
+
 
 
 footer {
