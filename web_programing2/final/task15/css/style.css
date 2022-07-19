@@ -19,7 +19,6 @@ h1 {
     height: 50px;
     margin: 0 auto;
     padding: 0;
-    border: solid;
 }
 .exchangeRateInput {
     width: 100px;
@@ -31,4 +30,26 @@ h1 {
 }
 div {
     margin: 3px;
+}
+
+.orders {
+    display: flex;
+}
+img {
+    width: 200px;
+    height: 140px;
+}
+.foodName {
+    width: 200px;
+    text-align: center;
+}
+.orderButton {
+    width: 200px;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+}
+li {
+    list-style-type: none;
 }

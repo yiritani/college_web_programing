@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>演習15-2</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<h1>料理の注文</h1>
+	<div class="orders">
+		<div>
+			<div class="foodImg"><img src="img/chinjao.jpeg" alt=""></div>
+			<div class="foodName"><p>青椒肉絲</p></div>
+			<div class="orderButton"><button id="chinjaoBtn">注文する</button></div>
+		</div>
+		<div>
+			<div class="foodImg"><img src="img/harumaki.jpeg" alt=""></div>
+			<div class="foodName"><p>春巻き</p></div>
+			<div class="orderButton"><button id="harumakiBtn">注文する</button></div>
+		</div>
+		<div>
+			<div class="foodImg"><img src="img/kushinsai.jpeg" alt=""></div>
+			<div class="foodName"><p>空芯菜</p></div>
+			<div class="orderButton"><button id="kushinsaiBtn">注文する</button></div>
+		</div>
+		<div>
+			<div class="foodImg"><img src="img/subuta.jpeg" alt=""></div>
+			<div class="foodName"><p>酢豚</p></div>
+			<div class="orderButton"><button id="subutaBtn">注文する</button></div>
+		</div>
+		<div>
+			<div class="foodImg"><img src="img/tenshin.jpeg" alt=""></div>
+			<div class="foodName"><p>天津</p></div>
+			<div class="orderButton"><button id="tenshinBtn">注文する</button></div>
+		</div>
+	</div>
+	<hr>
+	<div id="buttonArea">
+		<p>提供</p>
+		<button id="serveButton">提供</button>
+	</div>
+	<br>
+	<hr>
+	<div id="orderArea">
+		<p>待ち：</p>
+		<div id="orderList">
+			<ul>
+			</ul>
+		</div>
+	</div>
+
+	<script>
+		function addOrder(e) {
+			const foodName = e.target.parentNode.parentNode.children[1].innerText;
+			const li = document.createElement('li');
+			li.innerText = foodName;
+			document.getElementById('orderList').appendChild(li);
+		}
+
+		const chinjaoBtn = document.getElementById('chinjaoBtn');
+		chinjaoBtn.addEventListener('click', function(e) {
+			addOrder(e)
+		});
+		const harumakiBtn = document.getElementById('harumakiBtn');
+		harumakiBtn.addEventListener('click', function(e) {
+			addOrder(e)
+		});
+		const kushinsaiBtn = document.getElementById('kushinsaiBtn');
+		kushinsaiBtn.addEventListener('click', function(e) {
+			addOrder(e)
+		});
+		const subutaBtn = document.getElementById('subutaBtn');
+		subutaBtn.addEventListener('click', function(e) {
+			addOrder(e)
+		});
+		const tenshinBtn = document.getElementById('tenshinBtn');
+		tenshinBtn.addEventListener('click', function(e) {
+			addOrder(e)
+		});
+		const serveButton = document.getElementById('serveButton');
+		serveButton.addEventListener('click', function(e) {
+			const orderList = document.getElementById('orderList');
+			const li = orderList.children[0];
+			orderList.removeChild(li);
+		});
+
+	</script>
+</body>
+</html>
