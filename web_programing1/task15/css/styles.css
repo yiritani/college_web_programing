@@ -7,7 +7,7 @@
 #img_div p{
     position: absolute;
     top: 50%;
-    left: 35%;
+    left: 10%;
     transcontact_form: translate(-50%,-50%);
     font-size: 40px;
     color:#fff;
@@ -17,7 +17,6 @@
     opacity: 0.5;
     display:block;
     position: relative;
-    height: 80vh;
     width: 100%;
 }
 .fadein {
