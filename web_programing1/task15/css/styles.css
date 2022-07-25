@@ -19,6 +19,7 @@
     position: relative;
     width: 100%;
 }
+
 .fadein {
     animation: fadeIn 5s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
 }
